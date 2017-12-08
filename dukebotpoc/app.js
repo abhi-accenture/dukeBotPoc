@@ -27,16 +27,15 @@ var bot = new builder.UniversalBot(connector, function (session) {
     session.send("You said: %s", session.message.text);
 });
 
-
 //<Recognizer> 
 // Add global LUIS recognizer to bot 
- var luisAppUrl = process.env.LUIS_APP_URL || 'https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/8c7a3abe-a998-4709-a9d4-bfa2793f3ef9?subscription-key=debec9e5cba24fc28656f7eae27df019'; 
- var notesRecognizer = bot.recognizer(new builder.LuisRecognizer(luisAppUrl)); 
+ /*var luisAppUrl = process.env.LUIS_APP_URL || 'https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/8c7a3abe-a998-4709-a9d4-bfa2793f3ef9?subscription-key=debec9e5cba24fc28656f7eae27df019'; 
+ var notesRecognizer = bot.recognizer(new builder.LuisRecognizer(luisAppUrl)); */
 
 //You can provide your own model by specifing the 'LUIS_MODEL_URL' environment variable
 //This Url can be obtained by uploading or creating your model from the LUIS portal: https://www.luis.ai/
-/*var recognizer = new builder.LuisRecognizer(process.env.LUIS_MODEL_URL);
-bot.recognizer(recognizer);*/
+var recognizer = new builder.LuisRecognizer(process.env.LUIS_MODEL_URL);
+bot.recognizer(recognizer);
  // </Recognizer> 
 
 
