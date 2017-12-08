@@ -27,6 +27,7 @@ var bot = new builder.UniversalBot(connector, function (session) {
     session.send("You said: %s", session.message.text);
 });
 
+
 //<Recognizer> 
 // Add global LUIS recognizer to bot 
  /*var luisAppUrl = process.env.LUIS_APP_URL || 'https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/8c7a3abe-a998-4709-a9d4-bfa2793f3ef9?subscription-key=debec9e5cba24fc28656f7eae27df019'; 
